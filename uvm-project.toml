@@ -1,0 +1,21 @@
+schema_version = 1
+
+[library]
+path = "../uvm_llm_lib"
+
+[project]
+units = [
+  "sv_uvm.base.base_env.env",
+  "sv_uvm.base.base_test",
+  "sv_uvm.protocols.apb_master_agent",
+]
+external_unit_dirs = [
+  "rtl",
+  "dv/env/assertions",
+  "dv/env/tsn_qbv",
+  "dv/tests",
+]
+tops = ["dv/tb/tb.sv"]
+default_timescale = "1ns/1ps"
+external_packages = ["uvm_pkg"]
+external_includes = ["uvm_macros.svh"]
